@@ -16,6 +16,24 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+  // Check if minute has changed
+  if (seconds === 59) {
+    // Add effect to countdown element
+    document.getElementById("countdown").classList.add("animate__animated", "animate__bounce");
+  }
+
+  // Check if hour has changed
+  if (minutes === 59 && seconds === 59) {
+    // Add effect to countdown element
+    document.getElementById("countdown").classList.add("animate__animated", "animate__bounce");
+  }
+
+  // Check if day has changed
+  if (hours === 23 && minutes === 59 && seconds === 59) {
+    // Add effect to countdown element
+    document.getElementById("countdown").classList.add("animate__animated", "animate__bounce");
+  }
+
   // Output the result in the element with id="countdown"
   document.getElementById("days").innerHTML = days + "d ";
   document.getElementById("hours").innerHTML = hours + "h ";
